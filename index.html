@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itaano - Where Fun Never Stops | 24hr Pool Arena & Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">ITAANO</a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#facilities">Leagues</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>WHERE FUN NEVER STOPS</h1>
+            <p>24/7 Pool Arena & Premium Bar Experience</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Book a Table</a>
+                <a href="#events" class="btn btn-secondary">Upcoming Events</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="floating-bubbles"></div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Itaano</h2>
+                <p>Your ultimate entertainment destination</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Round-the-Clock Excitement</h3>
+                    <p>Welcome to Itaano, where the fun never stops! Open 24 hours, we're the premier destination for pool enthusiasts and night owls alike. Our state-of-the-art pool tables and fully stocked bar create the perfect atmosphere for friendly competition and unforgettable nights.</p>
+                    <p>Whether you're a serious player or just looking for a great time, Itaano offers something for everyone. Our expert staff, vibrant ambiance, and premium amenities ensure every visit is exceptional.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Open 24/7</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-beer"></i>
+                            <span>Craft Cocktails</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>Bar Snacks</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-music"></i>
+                            <span>Live Music</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1564982753612-6d706e22a9a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Itaano interior with pool tables">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="leagues-section" id="leagues">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pool Leagues</h2>
+                <p>Join our competitive leagues and show your skills</p>
+            </div>
+            
+            <div class="league-tabs">
+                <button class="tab-btn active" data-tab="standings">Current Standings</button>
+                <button class="tab-btn" data-tab="fixtures">Upcoming Fixtures</button>
+                <button class="tab-btn" data-tab="join">Join a League</button>
+            </div>
+            
+            <div class="tab-content active" id="standings">
+                <div class="league-selector">
+                    <select id="league-select">
+                        <option value="premier">Premier League</option>
+                        <option value="championship">Championship League</option>
+                        <option value="amateur">Amateur League</option>
+                        <option value="womens">Women's League</option>
+                    </select>
+                </div>
+                
+                <div class="standings-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Player</th>
+                                <th>P</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>Pts</th>
+                                <th>Win %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standings-data">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="fixtures">
+                <div class="fixtures-filter">
+                    <div class="filter-group">
+                        <label for="league-filter">League:</label>
+                        <select id="league-filter">
+                            <option value="all">All Leagues</option>
+                            <option value="premier">Premier League</option>
+                            <option value="championship">Championship League</option>
+                            <option value="amateur">Amateur League</option>
+                            <option value="womens">Women's League</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-filter">Date Range:</label>
+                        <select id="date-filter">
+                            <option value="upcoming">Upcoming</option>
+                            <option value="this-week">This Week</option>
+                            <option value="this-month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="fixtures-list" id="fixtures-data">
+                    <!-- Data will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="join">
+                <div class="join-league-content">
+                    <div class="join-info">
+                        <h3>Join Our Competitive Leagues</h3>
+                        <p>Itaano Arena hosts four different pool leagues catering to all skill levels. Whether you're a seasoned player or just starting out, we have a league for you.</p>
+                        
+                        <div class="league-types">
+                            <div class="league-type">
+                                <h4>Premier League</h4>
+                                <p>Our top-tier competitive league for advanced players. Weekly matches, professional referees, and cash prizes.</p>
+                                <p><strong>Entry:</strong> $50/month</p>
+                            </div>
+                            <div class="league-type">
+                                <h4>Championship League</h4>
+                                <p>Intermediate level competition. Perfect for players looking to improve their game.</p>
+                                <p><strong>Entry:</strong> $35/month</p>
+                            </div>
+                            <div class="league-type">
+                                <h4>Amateur League</h4>
+                                <p>Beginner-friendly environment to learn and enjoy competitive play.</p>
+                                <p><strong>Entry:</strong> $25/month</p>
+                            </div>
+                            <div class="league-type">
+                                <h4>Women's League</h4>
+                                <p>Exclusive league for female players of all skill levels.</p>
+                                <p><strong>Entry:</strong> $30/month</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="join-form">
+                        <h3>Register Your Interest</h3>
+                        <form id="leagueForm">
+                            <div class="form-group">
+                                <input type="text" id="league-name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="league-email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="league-phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="league-preference" required>
+                                    <option value="" disabled selected>Select Preferred League</option>
+                                    <option value="premier">Premier League</option>
+                                    <option value="championship">Championship League</option>
+                                    <option value="amateur">Amateur League</option>
+                                    <option value="womens">Women's League</option>
+                                    <option value="not-sure">Not Sure - Need Advice</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="league-experience" placeholder="Briefly describe your pool experience"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities-section" id="facilities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Facilities</h2>
+                <p>Premium amenities for the ultimate experience</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professional pool tables">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Professional Pool Tables</h3>
+                        <p>12 tournament-grade pool tables with perfect leveling and premium felt for the best playing experience.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Luxury bar">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Premium Bar</h3>
+                        <p>Extensive selection of craft beers, signature cocktails, and fine spirits served by expert mixologists.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1493&q=80" alt="Lounge area">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>VIP Lounge</h3>
+                        <p>Exclusive lounge area with private tables, premium service, and the best views of the arena.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <p>Experience the Itaano vibe</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1631746006806-34c0600c4e88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pool table closeup">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cocktails at the bar">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="People playing pool">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Bar atmosphere">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Modern interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565043589221-4a4b1a5c4b6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Night atmosphere">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join the excitement</p>
+            </div>
+            <div class="events-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">15</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Friday Night Tournament</h3>
+                        <p>Weekly pool tournament with cash prizes. Sign up at the bar. Free entry for members.</p>
+                        <div class="timeline-meta">
+                            <span><i class="far fa-clock"></i> 8:00 PM - 1:00 AM</span>
+                            <span><i class="fas fa-trophy"></i> $500 Prize Pool</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">22</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Live Band Night</h3>
+                        <p>Enjoy live music from local bands while you play. No cover charge before 10 PM.</p>
+                        <div class="timeline-meta">
+                            <span><i class="far fa-clock"></i> 9:00 PM - 2:00 AM</span>
+                            <span><i class="fas fa-music"></i> The Breakshots</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">29</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Happy Hour All Night</h3>
+                        <p>Special extended happy hour with half-price drinks and $5 table rentals.</p>
+                        <div class="timeline-meta">
+                            <span><i class="far fa-clock"></i> 6:00 PM - 12:00 AM</span>
+                            <span><i class="fas fa-cocktail"></i> All Well Drinks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>We're always open for you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Entertainment District, Downtown, City</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@itaano.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Open 24 Hours / 7 Days a Week</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Book a Table</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="tableType" required>
+                                <option value="" disabled selected>Select Table Type</option>
+                                <option value="standard">Standard Pool Table</option>
+                                <option value="tournament">Tournament Table</option>
+                                <option value="vip">VIP Lounge Table</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="datetime-local" id="bookingTime" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Special Requests"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">ITAANO</a>
+                    <p>Where fun never stops</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Sunday</p>
+                    <p>Open 24 Hours</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for events and special offers</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Itaano Pool Arena & Bar. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
